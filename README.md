@@ -18,13 +18,12 @@ Once the API returns an answer, the results area will contain:
 -   the string `type` of the result (positive/negative)
 -   both of the above should be green if positive, red if negative, and grey if neutral.
 
-While the result from the API is still being loaded, the results area will contain a "loading" indicator.
+While the result from the API is still being loaded, the results area will contain a "loading" indicator. Feel free to use a cool spinner animation.
 
 If the API returns an error, the results area will show a message that there was an error.
 
 ## Bonuses
 
--   Use a cool spinner animation as a loading indicator.
 -   Below the results area, display the appropriate [HTTP Cat](https://http.cat/) based on the status of the response.
 
 ## Submission
