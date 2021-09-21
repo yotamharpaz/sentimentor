@@ -22,6 +22,8 @@ async function textCheck(){
         document.getElementById("err").style.display = "block"   
     });
 
+    catResponse(response);
+
     const answer = await response.json();
 
     const textPolarityElem = document.getElementById("polarity");
@@ -39,24 +41,30 @@ function colorClassByPolarity(polarity) {
     const elem = document.getElementById("answer")
     if(polarity > 0){
         elem.style.color = "green"
+        elem.style.background = "none"
     }else if(polarity === 0) {
        elem.style.color = "grey"
        elem.style.background = "white";
     }else{
         elem.style.color = "red";
+        elem.style.background = "none"
+        
     }
 
 }
 function stopLoading() {
     document.getElementById("loader").style.display = "none";
     document.getElementById("answer").style.display = "block";
-  }
+}
 
-  function startLoading() {
-    document.getElementById("err").style.display = "none";
-    document.getElementById("loader").style.display = "block";
-    document.getElementById("answer").style.display = "none";
-  }
+function startLoading() {
+document.getElementById("err").style.display = "none";
+document.getElementById("loader").style.display = "block";
+document.getElementById("answer").style.display = "none";
+}
 
+async function catResponse(response){
+document.getElementById("httpCat").src = `https://http.cat/${response.status}`;
+}
   
    

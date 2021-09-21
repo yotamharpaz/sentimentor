@@ -33,9 +33,13 @@ body{
   }
   #err{
       display: none;
+      color: tomato;
+      font-size: x-large;
   }
   h1{
-      color: lightyellow;
+      color: rgb(231, 210, 91);
+      font-weight: bolder;
+      font-style: oblique; 
   }
   .container{
       display: flex;
@@ -65,3 +69,23 @@ body{
         border-radius: 7px;
         background-color: rgb(217, 236, 225);
     }
+    #answer{
+            font-size: 40px;
+            font-weight: bolder;
+            color: #fff;
+            text-align: center;
+            -webkit-animation: glow 2s ease-in-out infinite alternate;
+            -moz-animation: glow 2s ease-in-out infinite alternate;
+            animation: glow 2s ease-in-out infinite alternate;
+          }
+          
+          @-webkit-keyframes glow {
+            from {
+              text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff;
+            }
+            to {
+              text-shadow: 0 0 20px #fff, 0 0 30px #f1c97e77, 0 0 40px #f1c97e5e, 0 0 50px #f1c97e63, 0 0 60px #f1c97e44, 0 0 70px #f1c97e49, 0 0 80px #f1c97e3f;
+            }
+          }
+          
+    
