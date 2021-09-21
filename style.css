@@ -4,4 +4,12 @@ body{
     flex-direction: column;
     align-items: center;
 }
-
+.good{
+    color: lightgreen;
+}
+.natural{
+    color: gray;
+}
+.bad{
+    color: red;
+}
