@@ -1,3 +1,10 @@
+
+const playButton = document.getElementById("submit");
+playButton.addEventListener("click", () => textCheck().catch(() => {
+    stopLoading();
+    document.getElementById("err").style.display = "block"
+}))
+
 async function textCheck(){
     startLoading();
 
@@ -10,6 +17,9 @@ async function textCheck(){
             "Content-Type": "application/json"     
         },
         body: JSON.stringify({ "text": inputText})
+    }).catch( () => {
+        stopLoading();
+        document.getElementById("err").style.display = "block"   
     });
 
     const answer = await response.json();
@@ -31,6 +41,7 @@ function colorClassByPolarity(polarity) {
         elem.style.color = "green"
     }else if(polarity === 0) {
        elem.style.color = "grey"
+       elem.style.background = "white";
     }else{
         elem.style.color = "red";
     }
@@ -42,6 +53,10 @@ function stopLoading() {
   }
 
   function startLoading() {
+    document.getElementById("err").style.display = "none";
     document.getElementById("loader").style.display = "block";
     document.getElementById("answer").style.display = "none";
   }
+
+  
+   
